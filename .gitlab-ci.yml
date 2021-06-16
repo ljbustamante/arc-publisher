@@ -1,0 +1,31 @@
+# image: node:12.20-buster
+image: nikolaik/python-nodejs:python3.6-nodejs12-alpine
+
+stages:
+  - deploy
+
+deploy-to-dev:
+  stage: deploy
+  before_script:
+    - npm install -g serverless@2.32.0
+    - npm install
+    - pip install -r requirements.txt
+  script:
+    - sls deploy --stage dev --verbose
+  only:
+    - dev
+  tags:
+    - docker
+
+deploy-to-prod:
+  stage: deploy
+  before_script:
+    - npm install -g serverless@2.32.0
+    - npm install
+    - pip install -r requirements.txt
+  script:
+    - sls deploy --stage prod --verbose
+  only:
+    - master
+  tags:
+    - docker
