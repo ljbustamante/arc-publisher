@@ -1,4 +1,136 @@
-def getANSElectionsStory(dataStory):
+def getANSTaggedStory(dataStory):
+    ans = {
+        "additional_properties": {
+            "clipboard": {},
+            "has_published_copy": True
+        },
+        "address": {},
+        "canonical_website": "elcomercio",
+        "content_elements": [
+            {
+                "_id": "EWQVXS6KVRCDLEQYWJMQ7N457U",
+                "additional_properties": {
+                    "_id": 1623970489223,
+                    "comments": [],
+                    "inline_comments": []
+                },
+                "content": "El fenómeno ha sido documentado en la región rural de Gippsland, donde la tela de araña llegó a cubrir más de un kilómetro de largo cerca a una de las vías principales, según el diario La Vanguardia de España. No es la primera vez que se registra un fenómeno así, aunque ha sorprendido el tamaño del mismo y la coordinación de los insectos para haber realizado un gran manto en lugar de varios pequeños. (Foto: Facebook de Carolyn Crossley vía Reuters)",
+                "type": "text"
+            },
+            {
+                "_id": "HZG6ENRUZBAW3NTARAIIBBCHZE",
+                "referent": {
+                    "id": "HZG6ENRUZBAW3NTARAIIBBCHZE",
+                    "provider": "",
+                    "referent_properties": {
+                        "additional_properties": {
+                            "_id": "73RYP4KUHFFCXNV7ZBSDA7GEYI",
+                            "comments": []
+                        }
+                    },
+                    "type": "gallery"
+                },
+                "type": "reference"
+            }
+        ],
+        "content_restrictions": {
+            "content_code": "free"
+        },
+        "created_date": "2021-06-17T22:43:27.751Z",
+        "credits": {
+            "by": [
+                {
+                    "referent": {
+                        "id": "walter",
+                        "provider": "",
+                        "referent_properties": {},
+                        "type": "author"
+                    },
+                    "type": "reference"
+                }
+            ]
+        },
+        "description": {
+            "basic": ""
+        },
+        "display_date": "2021-06-17T22:46:57.652Z",
+        "distributor": {
+            "category": "staff",
+            "name": "elcomercio",
+            "subcategory": ""
+        },
+        "first_publish_date": "2021-06-17T22:46:57.652Z",
+        "headlines": {
+            "basic": "¿Por qué una enorme tela de araña cubrió los campos de un pueblo en Australia? | FOTOS",
+            "meta_title": "¿Por qué una enorme tela de araña cubrió los campos de un pueblo en Australia? | FOTOS",
+            "mobile": "",
+            "native": "",
+            "print": "",
+            "tablet": "",
+            "web": ""
+        },
+        "label": {},
+        "language": "",
+        "last_updated_date": "2021-06-17T22:56:07.369Z",
+        "owner": {
+            "id": "sandbox.elcomercio",
+            "sponsored": False
+        },
+        "planning": {
+            "internal_note": "",
+            "story_length": {
+                "character_count_actual": 452,
+                "character_encoding": "UTF-16",
+                "inch_count_actual": 1,
+                "line_count_actual": 3,
+                "word_count_actual": 81
+            }
+        },
+        "promo_items": {
+            "basic_gallery": {
+                "_id": "UARPGAR5ENH6VHFVCN3PJPALD4",
+                "referent": {
+                    "id": "UARPGAR5ENH6VHFVCN3PJPALD4",
+                    "provider": "",
+                    "referent_properties": {},
+                    "type": "gallery"
+                },
+                "type": "reference"
+            }
+        },
+        "publish_date": "2021-06-17T22:56:07.146Z",
+        "related_content": {
+            "basic": [],
+            "redirect": []
+        },
+        "revision": {
+            "user_id": "walter.ybarra@fractalservicios.pe"
+        },
+        "source": {
+            "name": "elcomercio",
+            "source_type": "staff",
+            "system": "composer"
+        },
+        "subheadlines": {
+            "basic": "Los residentes del estado de Victoria registraron el peculiar manto que ha cubierto amplias zonas de la región australiana. El fenómeno respondería a una técnica de supervivencia de los arácnidos ante las lluvias torrenciales registradas en el país oceánico"
+        },
+        "subtype": "gallery_vertical",
+        "taxonomy": {
+            "additional_properties": {
+                "parent_site_primaries": []
+            },
+            "tags": dataStory["tags"]
+        },
+        "type": "story",
+        "version": "0.10.7",
+        "workflow": {
+            "status_code": 1
+        }
+    }
+
+    return ans
+
+def getANSStory(dataStory):
     ans = {"additional_properties": {
                 "clipboard": {},
                 "has_published_copy": False
@@ -89,7 +221,7 @@ def getANSElectionsStory(dataStory):
                 "additional_properties": {
                     "parent_site_primaries": []
                 },
-                "tags": []
+                "tags": dataStory["tags"]
             },
             "type": "story",
             "version": "0.10.7",
